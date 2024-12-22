@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Book</title>
+</head>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        background-color:  #ddccff;
+    }
+
+    .container {
+        display: flex;
+        align-items: center;
+        margin: 30px auto;
+        background-color: #9966ff;
+        width: 60%;
+        border-radius: 20px;
+        padding: 30px;
+        border: 3px solid black;
+    }
+
+    .search-input {
+        width: 100%;
+        font-size: 18px;
+        border-radius: 30px;
+        padding: 10px;
+        border: 2px solid black;
+    }
+
+    #search-icon {
+        height: 20px;
+        margin-left: 10px;
+        cursor: pointer;
+    }
+
+    .result {
+        text-align: center;
+        width: 60%;
+        margin: 20px auto;
+        border-radius: 20px;
+        padding: 20px 30px;
+        font-size: 18px;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <input type="text" class="search-input" id="search-input" placeholder="Search Contact Name">
+        <img src="./search.jpeg" id="search-icon" onclick="searchContact()" alt="" style="margin-left: -40px;">
+    </div>
+    <div id="result" class="result">
+    </div>
+
+    <script>
+        const contactBook = {
+            nikita: 9209123702,
+            ankita: 9370715225,
+            shraddha: 9096628800,
+            akshay : 8600099976,
+            shreya : 9370458022,
+        };
+
+        function searchContact() {
+
+            const searchInput = document.getElementById('search-input').value.toLowerCase();
+
+            const contactNum = contactBook[searchInput];
+            const resultContainer = document.getElementById('result');
+            resultContainer.innerHTML = '';
+
+            if (contactNum) {
+                result.innerHTML = (` ${searchInput}  ${contactNum}`)
+            }
+            else {
+                result.innerHTML = (`${searchInput} doesn't exists`)
+            }
+        }
+
+    </script>
+</body>
+
+</html>
